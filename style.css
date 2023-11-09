@@ -68,7 +68,7 @@ nav a:hover,nav .active{
       linear-gradient( rgba(0, 0, 0, 0.178) ,transparent)
       , url(cover2.png) ;
    background-size: cover;
-   background-position: center;
+   background-position: 85% 0;
    background-repeat: no-repeat;
    display: flex;
    justify-content: center;
@@ -100,6 +100,8 @@ nav a:hover,nav .active{
     text-align: center;
     font-size: 30px;
 }
+
+
 section.products{
     background: rgb(204, 204, 204);
     width: 100%;
@@ -120,17 +122,19 @@ section.products{
 }
 .products-content .cards{
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 35px;
-    height: 400px;
+    height: 80%;
     color:  rgb(82, 82, 82);
 }
 .card{
     background: rgba(255, 255, 255, 0.384);
     height: 340px;
     width: 250px;
-    margin: 20px 40px;
+    margin:10px;
     border: solid 2px rgb(255, 255, 255);
     border-radius: 15px;
     overflow: hidden;
@@ -175,16 +179,18 @@ section.services{
 }
 .services-content .cards-serve{
     display: flex;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-around;
     flex-wrap: wrap;
     margin: 35px;
-    height: 400px;
+    height: 80%;
 }
 .serve{
     background: rgba(255, 255, 255, 0.384);
     height: 340px;
     width: 250px;
-    margin: 20px 40px;
+    margin: 10px;
     border: solid 2px rgb(255, 255, 255);
     border-radius: 15px;
     overflow: hidden;
@@ -216,4 +222,72 @@ section.services{
 .serve-content p{
     font-weight: 500;
     width: 80%;
+}
+@media (max-width:1055px){
+    .logo{
+        margin-left: 45px;
+    }
+    nav{
+        width: 80%;
+        margin: 5px;
+        padding:10px;
+    }
+    nav a{
+        padding: 5px;
+        font-size: 16px;
+    }
+    .hello img{
+        margin-left: 95px;
+    }
+    .products-content .cards{
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+    .card{
+        display: flex;
+        align-items: center;
+        width: 270px;
+        height: 135px;
+        margin: 10px 0;
+    }
+    .card img{
+        height: 100%;
+        width: 50%;
+    }
+    .card-content{
+        width:50%;
+        text-align: center;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+    .services-content .cards-serve{
+        flex-direction: column;
+        flex-wrap: nowrap;
+        width: 100%;
+        margin:0px;
+    }
+    .serve{
+        display: flex;
+        align-items: center;
+        height: 135px;
+        width: 270px;
+    }
+    .serve img{
+        height: 90%;
+        width: 40%;
+    }
+    .serve-content{
+        width:60%;
+        height: 80%;
+        text-align: center;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+    .serve-content h4{
+        font-size: 16px;
+        padding: 3px 0px;
+    }
+    .serve-content p{
+    font-size: 12px;
+    }
 }
