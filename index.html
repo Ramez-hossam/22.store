@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>22.Egy</title>
 </head>
 <body>
@@ -12,11 +13,16 @@
             <div class="logo">
                 <a href="#"><img src="logo1.png"></a>
             </div>
+            <input type="checkbox" id="check">
+            <label for="check" class="icons">
+                <i class='bx bx-menu' id="menu-icon"></i>
+                <i class='bx bx-x' id="close-icon"></i>
+            </label>
             <nav>
-                <a href="#home" class="active">Home</a>
-                <a href="#products">Products</a>
-                <a href="#">Services</a>
-                <a href="#">About</a>
+                <a href="#"style="--i:0;" class="active">Home</a>
+                <a href="#"style="--i:1;">Products</a>
+                <a href="#"style="--i:2;">Services</a>
+                <a href="#"style="--i:3;">About</a>
             </nav>
         </header>
         <section class="home-page" id="home">
@@ -33,7 +39,7 @@
                 <h2>available products</h2>
                 <div class="cards">
                     <div class="card">
-                        <img src="products/hoodie/8.jpg">
+                        <img src="products/hoodie/Untitled (700 x 1000 px)_20231110_140801_0000.png">
                         <div class="card-content">
                             <h4>Hoodie</h4>
                         </div>
@@ -62,21 +68,21 @@
                         <img src="icons/t-shirt.png">
                         <div class="serve-content">
                             <h4>Print</h4>
-                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                            <p>Print any design you want</p>
                         </div>
                     </div>
                     <div class="serve">
                         <img src="icons/delivery.png">
                         <div class="serve-content">
                             <h4>Delivery</h4>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit?</p>
+                            <p>shipping all over egypt</p>
                         </div>
                     </div>
                     <div class="serve">
                         <img src="icons/quality.png">
                         <div class="serve-content">
                             <h4>Quality</h4>
-                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam!</p>
+                            <p>The highest quality at the lowest price</p>
                         </div>
                     </div>
                 </div>

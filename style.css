@@ -14,7 +14,7 @@ body{
     height: 100vh;
 }
 header{
-    background:linear-gradient(rgb(204, 204, 204),transparent);
+    background:linear-gradient(rgb(204, 204, 204) 30%,transparent );
     width: 100%;
     height: 15%;
     display: flex;
@@ -41,19 +41,25 @@ header a{
 .logo a img{
     width: 85px;
     height: 85px;
-
+}
+.icons{
+    font-size: 50px;
+    position: absolute;
+    right: 5%;
+    color: rgb(88, 88, 88);
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
 }
 nav{
-    width: 50%;
-    list-style: none;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 40px;
-    padding: 5px 15px;
+    width: 56%;
 }
 nav a{
     font-weight: 500;
     padding: 5px 15px;
+    margin-left: 80px;
     transition: .3s ease;
     font-size: 20px;
 }
@@ -68,7 +74,7 @@ nav a:hover,nav .active{
       linear-gradient( rgba(0, 0, 0, 0.178) ,transparent)
       , url(cover2.png) ;
    background-size: cover;
-   background-position: 85% 0;
+   background-position: center bottom;
    background-repeat: no-repeat;
    display: flex;
    justify-content: center;
@@ -86,6 +92,9 @@ nav a:hover,nav .active{
     height: 250px;
     width: 400px;
     color: rgb(32, 32, 32);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .hello h4{
     text-align: center;
@@ -94,7 +103,6 @@ nav a:hover,nav .active{
 }
 .hello img{
     width: 150px;
-    margin-left: 125px;
 }
 .hello h2{
     text-align: center;
@@ -119,6 +127,7 @@ section.products{
 .products-content h2{
     margin: 35px 0 20px;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 .products-content .cards{
     display: flex;
@@ -203,14 +212,16 @@ section.services{
     cursor: auto;
 }
 .serve img{
-    padding: 15px;
-    height: 30%;
+    padding: 5px;
+    margin: 15px;
+    height: 40%;
 }
 .serve-content{
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .serve-content h4{
     width:100%;
@@ -223,32 +234,111 @@ section.services{
     font-weight: 500;
     width: 80%;
 }
-@media (max-width:1055px){
+
+@media (max-width:1420px) {
+    nav a{
+        margin-left: 50px;
+    }
+}
+@media (max-width:1118px) {
+    nav a{
+        margin-left: 30px;
+    }
+}
+@media (max-width:1070px){
+        .card{
+            background: rgba(255, 255, 255, 0.384);
+            height: 300px;
+            width: 200px;
+            margin:10px;
+        }
+        .serve{
+            width: 200px;
+            height: 300px;
+        }
+        .serve img{
+            height: 30%;
+        }
+}
+    @media (max-width:975px) {
+        .icons{
+            display: inline-flex;
+        }
+        #check:checked~.icons #menu-icon{
+            display: none;
+        }
+        .icons #close-icon{
+            display: none;
+        }
+        #check:checked~.icons #close-icon{
+            display: block;
+        }
+        nav{
+            position: absolute;
+            top: 100%;
+            left: 100%;
+            width: 100%;
+            height: 85vh;
+            background-color: rgba(177, 177, 177, 0.281);
+            backdrop-filter: blur(4px);
+            overflow: hidden;
+            transition: .5s ease;
+        }
+        #check:checked~nav{
+            width: 100%;
+            left: 0;
+        }
+        nav a {
+            display: block;
+            color: rgb(44, 44, 44);
+            font-size: 30px;
+            margin: 0;
+            padding: 20px 0;
+            text-align: center;
+            transform: translatex(100px);
+            transition: .5s ease;
+            opacity: 0;
+        }
+        #check:checked~nav a{
+            transform: translatex(0px);
+            transition-delay: calc(.18s * var(--i));
+            opacity: 1;
+        }
+     }
+@media (max-width:915px){
+    .container section.home-page{
+        background-image:
+        linear-gradient( rgba(0, 0, 0, 0.178) ,transparent)
+        , url(Ccoverr.png) ;
+    background-size: cover;
+    }
     .logo{
         margin-left: 45px;
     }
-    nav{
-        width: 80%;
-        margin: 5px;
-        padding:10px;
+    .content{
+        margin-top: 30px;
+        align-items: start;
     }
-    nav a{
-        padding: 5px;
-        font-size: 16px;
+    .hello{
+        margin-top: 50px;
     }
-    .hello img{
-        margin-left: 95px;
+    .products-content{
+        padding: 15px;
+    }
+    .products-content h2{
+        margin-bottom: 30px;
+        font-size: 50px;
     }
     .products-content .cards{
         flex-direction: column;
         flex-wrap: nowrap;
+        margin: 15px;
     }
     .card{
         display: flex;
         align-items: center;
-        width: 270px;
-        height: 135px;
-        margin: 10px 0;
+        width: 450px;
+        margin: 15px 0;
     }
     .card img{
         height: 100%;
@@ -257,8 +347,10 @@ section.services{
     .card-content{
         width:50%;
         text-align: center;
-        font-size: 15px;
         text-transform: uppercase;
+    }
+    .services-content h2{
+        font-size:50px;
     }
     .services-content .cards-serve{
         flex-direction: column;
@@ -269,10 +361,11 @@ section.services{
     .serve{
         display: flex;
         align-items: center;
-        height: 135px;
-        width: 270px;
+        width: 500px;
+        margin: 15px 0;
     }
     .serve img{
+        padding: 25px;
         height: 90%;
         width: 40%;
     }
@@ -280,14 +373,41 @@ section.services{
         width:60%;
         height: 80%;
         text-align: center;
-        font-size: 10px;
         text-transform: uppercase;
     }
     .serve-content h4{
-        font-size: 16px;
         padding: 3px 0px;
     }
-    .serve-content p{
-    font-size: 12px;
+}
+@media (max-width:670px){
+    .products-content h2{
+        margin-bottom: 20px;
+        font-size: 30px;
+    }
+    .services-content h2{
+        font-size:30px;
+    }
+    .card{
+        width: 240px;
+    }
+    .card-content{
+        font-size: 20px ;
+    }
+    .serve-content{
+        height: 95%;
+    }
+    .serve{
+        width: 270px;
+    }
+    .serve img{
+        padding: 15px;
+    }
+    .cards-serve h4{
+        font-size: 22px;
+    }
+    .cards-serve p{
+        font-size: 13px;
+        font-weight: 600;
+        word-wrap: break-word;
     }
 }
